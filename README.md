@@ -1,7 +1,5 @@
 # One Health NGR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Follow our socials
 [Facebook](https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC)
 [Instagram](https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA)
