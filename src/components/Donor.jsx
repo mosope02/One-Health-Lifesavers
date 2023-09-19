@@ -132,7 +132,7 @@ export const Donor = () => {
               
               <div className='col-span-1'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>State</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' placeholder='Select State' name="state" value={selectedState} onChange={handleStateChange} required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' placeholder='Select State' name="state" value={selectedState} onChange={handleStateChange} required>
                   <option value='' disabled >--select state--</option>
                   {
                     allstates.map((allstate)=>{
@@ -144,7 +144,7 @@ export const Donor = () => {
 
               <div className='col-span-1'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>City</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' name="" id="" value={selectedLga} onChange={handleLgaChange} required >
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' name="" id="" value={selectedLga} onChange={handleLgaChange} required >
                   <option value="" disabled>--select city--</option>
                   {
                     lgas.map(lga => (
@@ -156,7 +156,7 @@ export const Donor = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Occupation</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
                   <option value="null" disabled>--select Occupation--</option>
                   <option value="employed">Employed</option>
                   <option value="self-employed">Self-Employed</option>
@@ -167,7 +167,7 @@ export const Donor = () => {
                 occupation === "student" ? 
                 <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Institution</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' type="text" value={institution} onChange={handleInstitution} placeholder='Select Institution'>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={institution} onChange={handleInstitution} placeholder='Select Institution'>
                   <option value="" disabled>--select instittion</option>
                   {
                     allSchools.map(schools => (
@@ -180,7 +180,7 @@ export const Donor = () => {
             
             <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Blood Group</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' value={bloodGroup} onChange={handleBloodGroup} placeholder='Select Blood Group' required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' value={bloodGroup} onChange={handleBloodGroup} placeholder='Select Blood Group' required>
                   <option value="" disabled>--select blood group--</option>
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
@@ -196,7 +196,7 @@ export const Donor = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Genotype</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' name="genotype" value={genotype} onChange={handleGenotype} required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' name="genotype" value={genotype} onChange={handleGenotype} required>
                   <option value="" disabled>--select genotype--</option>
                   <option value="AA">AA</option>
                   <option value="AS">AS</option>
@@ -209,12 +209,12 @@ export const Donor = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Date of Birth</p>
-                <input type="date" name="dob" className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' value={dob} onChange={handleDob} required />
+                <input type="date" name="dob" className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' placeholder='dd/mm/yyyy' value={dob} onChange={handleDob} required />
               </div>
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>When was the last time you donated blood?</p>
-                <select name="lastdonation" value={lastDonation} onChange={handleLastDonation} className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' required>
+                <select name="lastdonation" value={lastDonation} onChange={handleLastDonation} className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' required>
                   <option value="" disabled>--select--</option>
                   <option value="First time">First time Donor</option>
                   <option value="Less than three">Less than 3 months ago</option>
@@ -224,7 +224,7 @@ export const Donor = () => {
               
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Have you followed our social media handle?</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' type="text" value={followed} onChange={handleFollowed} placeholder='' >
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={followed} onChange={handleFollowed} placeholder='' >
                   <option value="no">No</option>
                   <option value="yes">Yes</option>
                 </select>
@@ -232,8 +232,8 @@ export const Donor = () => {
 
               {
                 followed === "yes" ? '' :
-                <div className='text-[#191919] flex flex-col lg:flex-row gap-2 text-sm lg:text-base'>
-                <div className='flex w-full mt-3 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
+                <div className='text-[#191919] flex flex-col lg:flex-row gap-4 text-sm lg:text-base'>
+                <div className='flex w-full mt-6 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
                 <div className='flex w-full'> <a href="https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
                 <div className='flex w-full'> <a href="https://x.com/onehealthngr?s=21&t=90iGkCUOVi3XBgT_S9Qcqw" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'>
                   <svg className='inline-block w-5 h-5 mr-2' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
@@ -244,7 +244,7 @@ export const Donor = () => {
               }
               
 
-              <div className='flex gap-2 mt-4 lg:mt-7 col-span-2'>
+              <div className='flex gap-2 mt-6 lg:mt-7 col-span-2'>
                 <div><input type="checkbox" name="consent" id="" onClick={changeVisibility} className={` ${checked ? 'hidden' : 'block'} h-8 w-8 shrink-0 appearance-none border border-[#ff9d9d] rounded-lg bg-red checked:border-[#FE3434]`} />
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" onClick={changeVisibility} className={`${checked ? 'block' : 'hidden'}`}>
                       <path d="M12.0001 29.3334H20.0001C26.6667 29.3334 29.3334 26.6667 29.3334 20V12C29.3334 5.33335 26.6667 2.66669 20.0001 2.66669H12.0001C5.33341 2.66669 2.66675 5.33335 2.66675 12V20C2.66675 26.6667 5.33341 29.3334 12.0001 29.3334Z" stroke="#FE3434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

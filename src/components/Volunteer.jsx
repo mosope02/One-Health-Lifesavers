@@ -125,7 +125,7 @@ export const Volunteer = () => {
               
               <div className='col-span-1'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>State</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' placeholder='Select State' name="" id="" value={selectedState} onChange={handleStateChange} required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' placeholder='Select State' name="" id="" value={selectedState} onChange={handleStateChange} required>
                   <option value='' disabled>--select state--</option>
                   {
                     allstates.map((allstate)=>{
@@ -137,7 +137,7 @@ export const Volunteer = () => {
 
               <div className='col-span-1'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>City</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' name="" id="" value={selectedLga} onChange={handleLgaChange} required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' name="" id="" value={selectedLga} onChange={handleLgaChange} required>
                   <option value="">--select city--</option>
                   {
                     lgas.map(lga => (
@@ -149,7 +149,7 @@ export const Volunteer = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Occupation</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
                   <option value="" disabled>--select Occupation--</option>
                   <option value="employed">Employed</option>
                   <option value="self-employed">Self-Employed</option>
@@ -160,7 +160,7 @@ export const Volunteer = () => {
                 occupation === "student" ? 
                 <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Institution</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' type="text" name="" value={institution} onChange={handleInstitution} placeholder='Select Institution' required >
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" name="" value={institution} onChange={handleInstitution} placeholder='Select Institution' required >
                   <option value="" disabled>--select instittion</option>
                   {
                     allSchools.map(schools => (
@@ -173,7 +173,7 @@ export const Volunteer = () => {
               
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Have you followed our social media handle?</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full' type="text" name=""placeholder='' value={followed} onChange={handleFollowed} >
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" name=""placeholder='' value={followed} onChange={handleFollowed} >
                   <option value="no">No</option>
                   <option value="yes">Yes</option>
                 </select>
