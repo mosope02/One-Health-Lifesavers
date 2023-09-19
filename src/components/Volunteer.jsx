@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import allstates from './nigeria-state-and-lgas.json'
 import allSchools from './universities.json'
@@ -182,9 +182,9 @@ export const Volunteer = () => {
               {
                 followed === "yes" ? '' :
                 <div className='text-[#191919] flex flex-col lg:flex-row gap-2 text-sm lg:text-base'>
-                <div className='flex w-full mt-3 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
-                <div className='flex w-full'> <a href="https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA" className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
-                <div className='flex w-full'> <a href="https://x.com/onehealthngr?s=21&t=90iGkCUOVi3XBgT_S9Qcqw" className='hover:text-[#fe3434]'>
+                <div className='flex w-full mt-3 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
+                <div className='flex w-full'> <a href="https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
+                <div className='flex w-full'> <a href="https://x.com/onehealthngr?s=21&t=90iGkCUOVi3XBgT_S9Qcqw" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'>
                   <svg className='inline-block w-5 h-5 mr-2' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                     <path fill='#666666' d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
                   </svg>Follow on X</a>
@@ -205,7 +205,7 @@ export const Volunteer = () => {
                     </svg>
                 </div>
                 <div>
-                  <span className='text-sm'>I agree and consent to the storage and handling of my data by One Health in accordance with the <a href="#" className='text-[#0155f8] font-medium'>privacy policy</a> </span>
+                  <span className='text-sm'>I agree and consent to the storage and handling of my data by One Health in accordance with the <a href="/" className='text-[#0155f8] font-medium'>privacy policy</a> </span>
                 </div>
               </div>
 
