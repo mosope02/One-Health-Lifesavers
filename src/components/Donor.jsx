@@ -5,6 +5,8 @@ import allSchools from './universities.json'
 import facebook from '../assets/facebook.png'
 import instagram from '../assets/instagram.png'
 import { Footer } from './Footer'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Donor = () => {
@@ -21,9 +23,10 @@ export const Donor = () => {
   const [bloodGroup, setBloodGroup] = useState('')
   const [genotype, setGenotype] = useState('')
   const [occupation, setOccupation] = useState('')
-  const [followed, setFollowed] = useState('no')
+  const [followed, setFollowed] = useState(false)
   const [dob, setDob] = useState('')
   const [lastDonation, setLastDonation] = useState('')
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   const  handleFirstName = (event) => {
     setFirstName(event.target.value)
@@ -49,8 +52,8 @@ export const Donor = () => {
   const handleGenotype = (event) => {
     setGenotype(event.target.value)
   }
-  const handleFollowed = (event) => {
-    setFollowed(event.target.value)
+  const handleFollowed = () => {
+    setFollowed(!followed)
   }
 
   const handleLgaChange = (event) => {
@@ -75,24 +78,33 @@ export const Donor = () => {
   }
 
   const details = {
-    firstname: firstname,
+    firstName: firstname,
     lastName: lastName,
     email: email,
     contact: contact,
     address: address,
     state: selectedState,
     city: selectedLga,
-    occupation: occupation,
-    institution: institution,
-    bloodGroup: bloodGroup,
+    dateOfBirth: dob,
     genotype: genotype,
-    dob: dob,
+    bloodGroup: bloodGroup,
     lastDonation: lastDonation,
+    occupation: occupation,    
+    institution: institution,    
     followed: followed
   }
-  const handleSubmit = (event) => {
+  const url = 'https://onehealthbackend.onrender.com/donor/createDonor'
+  const navigate = useNavigate()
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(details);
+    setFormSubmitted(true)
+    try {
+      const resp = await axios.post(url, details) 
+      navigate('/join-donors')
+    } catch (error) {
+      alert('An Error Occured. Please try again.')
+    }
   }
   return (
     <>
@@ -218,20 +230,20 @@ export const Donor = () => {
                   <option value="" disabled>--select--</option>
                   <option value="First time">First time Donor</option>
                   <option value="Less than three">Less than 3 months ago</option>
-                  <option value="More than 3 months ago">More than 3 months ago</option>
+                  <option value="More than three">More than 3 months ago</option>
                 </select>
               </div>
               
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Have you followed our social media handle?</p>
                 <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={followed} onChange={handleFollowed} placeholder='' >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
+                  <option value={false}>No</option>
+                  <option value={true}>Yes</option>
                 </select>
               </div>
 
               {
-                followed === "yes" ? '' :
+                followed === true ? '' :
                 <div className='text-[#191919] flex flex-col lg:flex-row gap-4 text-sm lg:text-base'>
                 <div className='flex w-full mt-6 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
                 <div className='flex w-full'> <a href="https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
@@ -257,7 +269,7 @@ export const Donor = () => {
               </div>
 
               <div className='col-span-2'>
-                <button type='submit' className='py-3 px-9 bg-[#fe3434] text-[#fdfdfd] mt-16 hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none rounded disabled:bg-[#fcc] disabled:hover:shadow-none' disabled={!checked}>Submit</button>
+                <button type='submit' className='py-3 px-9 bg-[#fe3434] text-[#fdfdfd] mt-16 hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none rounded disabled:bg-[#fcc] disabled:hover:shadow-none' disabled={!checked || formSubmitted}>{formSubmitted ? 'Loading...' : 'Submit'}</button>
               </div>
             </form>
         </div>

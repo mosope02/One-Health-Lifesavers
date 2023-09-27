@@ -17,11 +17,11 @@ export const Footer = () => {
           <div className='mt-8 lg:w-[15%]'>
             <h3 className=' font-semibold text-base text-[#0F0000]'>Company</h3>
             <ul className=' mt-5  text-sm lg:text-base font-normal text-[#666] flex flex-col gap-4'>
-              <li><Link to='about' className='hover:text-[#FE3434]'>About Us</Link></li>
-              <li><Link to='donor' className='hover:text-[#FE3434]'>Become a Blood Donor</Link></li>
-              <li><Link to='volunteer' className='hover:text-[#FE3434]'>Become a Volunteer</Link></li>
-              <li><Link to='events' className='hover:text-[#FE3434]'>Events</Link></li>
-              <li><Link to='faqs' className='hover:text-[#FE3434]'>FAQs</Link></li>
+              <li><p to='about' className='hover:text-[#FE3434]'>About Us</p></li>
+              <li><Link to='/donor' className='hover:text-[#FE3434]'>Become a Blood Donor</Link></li>
+              <li><Link to='/volunteer' className='hover:text-[#FE3434]'>Become a Volunteer</Link></li>
+              <li><p to='events' className='hover:text-[#FE3434]'>Events</p></li>
+              <li><p to='faqs' className='hover:text-[#FE3434]'>FAQs</p></li>
             </ul>
           </div>
 

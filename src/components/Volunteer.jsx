@@ -6,6 +6,8 @@ import { MultiSelect } from 'react-multi-select-component'
 import facebook from '../assets/facebook.png'
 import instagram from '../assets/instagram.png'
 import { Footer } from './Footer'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export const Volunteer = () => {
   const [firstname, setFirstName] = useState('')
@@ -19,8 +21,10 @@ export const Volunteer = () => {
   const [selectedLga, setSelectedLga] = useState()
   const [skills, setSkills] = useState([])
   const [occupation, setOccupation] = useState('')
-  const [followed, setFollowed] = useState('no')
+  const [followed, setFollowed] = useState(false)
+  const [dob, setDob] = useState('')
   const [institution, setInstitution] = useState('')
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   const categories= [
     {label:'Photography/Videography', value:'photography/videography'},
@@ -57,35 +61,50 @@ export const Volunteer = () => {
   const handleLgaChange = (event) => {
     setSelectedLga(event.target.value)
   }
-  const handleFollowed = (event) => {
-    setFollowed(event.target.value)
+  const handleFollowed = () => {
+    setFollowed(!followed)
   }
 
   const handleStateChange = (event) => {
     setSelectedState(event.target.value)
     setLgas(allstates.find(alls => alls.state === event.target.value).lgas)
   }
+
+  const handleDob = (event) => {
+    setDob(event.target.value)
+  }
+
   const changeVisibility = () => {
     setChecked(!checked)
   }
+
+  const url = 'https://onehealthbackend.onrender.com/volunteer/createVolunteer'
+  const navigate = useNavigate();
   
   const details = {
-    firstname: firstname,
+    firstName: firstname,
     lastName: lastName,
     email: email,
     contact: contact,
     address: address,
     state: selectedState,
     city: selectedLga,
+    dateOfBirth: dob,
+    skills: skills.map(skill => skill.label),
     occupation: occupation,
     institution: institution,
     followed: followed,
-    skills: skills 
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(details);
+    setFormSubmitted(true)
+    try {
+      const resp = await axios.post(url, details)
+      navigate('/join-volunteers')
+    } catch (error) {
+      alert('An Error Occured. Please try again.')
+    } 
   }
   return (
     <>
@@ -148,6 +167,11 @@ export const Volunteer = () => {
               </div>
 
               <div className='col-span-2'>
+                <p className='text-[#191919] mt-6 lg:mt-0'>Date of Birth</p>
+                <input type="date" name="dob" className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' placeholder='dd/mm/yyyy' value={dob} onChange={handleDob} required />
+              </div>
+
+              <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Occupation</p>
                 <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
                   <option value="" disabled>--select Occupation--</option>
@@ -173,14 +197,14 @@ export const Volunteer = () => {
               
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Have you followed our social media handle?</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" name=""placeholder='' value={followed} onChange={handleFollowed} >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' name=""placeholder='' value={followed} onChange={handleFollowed} >
+                  <option value={false}>No</option>
+                  <option value={true}>Yes</option>
                 </select>
               </div>
 
               {
-                followed === "yes" ? '' :
+                followed === true ? '' :
                 <div className='text-[#191919] flex flex-col lg:flex-row gap-2 text-sm lg:text-base'>
                 <div className='flex w-full mt-3 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
                 <div className='flex w-full'> <a href="https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
@@ -210,7 +234,7 @@ export const Volunteer = () => {
               </div>
 
               <div className='col-span-2'>
-              <button type='submit' className='py-3 px-9 bg-[#fe3434] text-[#fdfdfd] mt-16 hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none rounded disabled:bg-[#fcc] disabled:hover:shadow-none' disabled={!checked}>Submit</button>
+              <button type='submit' className='py-3 px-9 bg-[#fe3434] text-[#fdfdfd] mt-16 hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none rounded disabled:bg-[#fcc] disabled:hover:shadow-none' disabled={!checked || formSubmitted}>{formSubmitted ? 'Loading...' : 'Submit'}</button>
               </div>
             </form>
         </div>
