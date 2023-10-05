@@ -1,6 +1,5 @@
 {
   "name": "one-healthls",
-  "homepage": "onehealthls.com.ng",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
