@@ -100,7 +100,7 @@ export const Volunteer = () => {
     event.preventDefault()
     setFormSubmitted(true)
     try {
-      const resp = await axios.post(url, details)
+      await axios.post(url, details)
       navigate('/join-volunteers')
     } catch (error) {
       alert('An Error Occured. Please try again.')
