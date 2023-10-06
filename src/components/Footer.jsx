@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className='w-11/12 lg:w-full mx-auto font-montserrat lg:flex justify-between lg:px-24'>
           <div className='w-11/12 lg:w-[24%]'>
             <div><img className='w-12 h-12' src={navlogo} alt="" /></div>
-            <div><p className=' text-sm lg:text-base font-normal text-[#666]'>OneHealth Lifesavers is dedicated to fostering voluntary blood donations, and addressing Nigeria's blood shortage through a robust donor network and impactful medical outreach initiatives.</p></div>
+            <div><p className=' text-sm lg:text-base font-normal text-[#666]'>One Health Lifesavers is dedicated to fostering voluntary blood donations, and addressing Nigeria's blood shortage through a robust donor network and impactful medical outreach initiatives.</p></div>
           </div>
 
           <div className='mt-8 lg:w-[15%]'>
