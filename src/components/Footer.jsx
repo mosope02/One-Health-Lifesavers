@@ -28,9 +28,9 @@ export const Footer = () => {
           <div className='mt-8 lg:w-[22%]'>
             <h3 className=' font-semibold text-base text-[#0F0000]'>Contact Us</h3>
             <ul className=' mt-5  text-sm lg:text-base font-normal text-[#666] flex flex-col gap-4'>
-              <li><span><img src={mail} alt="" className=' w-6 h-6 inline-block' /></span> <span><a href="mailto:onehealthlifesavers@gmail.com" target='_blank' rel='noreferrer' className='hover:text-[#FE3434]'>Onehealthlifesavers@gmail.com</a></span></li>
+              <li><span><img src={mail} alt="" className='mr-2 lg:mr-1 w-6 h-6 inline-block' /></span> <span><a href="mailto:onehealthlifesavers@gmail.com" target='_blank' rel='noreferrer' className='hover:text-[#FE3434]'>Onehealthlifesavers@gmail.com</a></span></li>
               <li><span><img src={facebook} alt="" className='mr-2 w-6 h-6 inline-block'/></span> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=LQQJ4d" target='_blank' rel='noreferrer' className='hover:text-[#FE3434]'>One Health Lifesavers</a></li>
-              <li><span><img src={insta} alt="" className='mr-2 w-6 h-6 inline-block' /></span> <a href="https://instagram.com/onehealthls?igshid=OGQ5ZDc2ODk2ZA==" target='_blank' rel='noreferrer' className='hover:text-[#FE3434]'>Onehealth Lifesavers</a></li>
+              <li><span><img src={insta} alt="" className='mr-2 w-6 h-6 inline-block' /></span> <a href="https://instagram.com/onehealthls?igshid=OGQ5ZDc2ODk2ZA==" target='_blank' rel='noreferrer' className='hover:text-[#FE3434]'>One Health Lifesavers</a></li>
               <li><span><svg className='inline-block w-5 h-5 mr-2' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                     <path fill='#666666' d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
                   </svg></span> <a href="https://x.com/onehealthlfs?s=11&t=90iGkCUOVi3XBgT_S9Qcqw" target='_blank' rel='noreferrer' className='hover:text-[#FE3434]'>One Health Lifesavers</a></li>

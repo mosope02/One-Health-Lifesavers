@@ -38,6 +38,8 @@ export const Donor = () => {
     setEmail(event.target.value)
   }
   const handleContact = (event) => {
+    const value = event.target.value
+    if(value.length > 11) {event.target.value = value.slice(0, 11)}
     setContact(event.target.value)
   }
   const handleAddress = (event) => {
