@@ -20,8 +20,8 @@ export const Donor = () => {
   const [lgas, setLgas] = useState([])
   const [selectedLga, setSelectedLga] = useState('')
   const [institution, setInstitution] = useState('')
-  const [bloodGroup, setBloodGroup] = useState('')
-  const [genotype, setGenotype] = useState('')
+  const [bloodGroup, setBloodGroup] = useState('/')
+  const [genotype, setGenotype] = useState('/')
   const [occupation, setOccupation] = useState('')
   const [followed, setFollowed] = useState(false)
   const [dob, setDob] = useState('')
@@ -197,7 +197,7 @@ export const Donor = () => {
             <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Blood Group</p>
                 <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' value={bloodGroup} onChange={handleBloodGroup} placeholder='Select Blood Group' required>
-                  <option value="" disabled>--select blood group--</option>
+                  <option value="/" disabled>--select blood group--</option>
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
                   <option value="B+">B+</option>
@@ -213,13 +213,13 @@ export const Donor = () => {
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Genotype</p>
                 <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' name="genotype" value={genotype} onChange={handleGenotype} required>
-                  <option value="" disabled>--select genotype--</option>
+                  <option value="/" disabled>--select genotype--</option>
                   <option value="AA">AA</option>
                   <option value="AS">AS</option>
                   <option value="SS">SS</option>
                   <option value="AC">AC</option>
                   <option value="SC">SC</option>
-                  <option value="idk">I don't know</option>
+                  <option value="">I don't know</option>
                 </select>
               </div>
 
