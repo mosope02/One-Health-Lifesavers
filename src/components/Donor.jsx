@@ -206,7 +206,7 @@ export const Donor = () => {
                   <option value="AB-">AB-</option>
                   <option value="O+">O+</option>
                   <option value="O-">O-</option>
-                  <option value="idk">I don't know</option>
+                  <option value="">I don't know</option>
                 </select>
               </div>
 
