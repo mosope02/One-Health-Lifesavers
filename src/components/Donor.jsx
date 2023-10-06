@@ -100,9 +100,11 @@ export const Donor = () => {
     event.preventDefault()
     setFormSubmitted(true)
     try {
-      await axios.post(url, details) 
+      const resp = await axios.post(url, details) 
+      console.log(resp.success);
       navigate('/join-donors')
     } catch (error) {
+      setFormSubmitted(false)
       alert('An Error Occured. Please try again.')
     }
   }
@@ -144,7 +146,7 @@ export const Donor = () => {
               
               <div className='col-span-1'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>State</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' placeholder='Select State' name="state" value={selectedState} onChange={handleStateChange} required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' placeholder='Select State' name="state" value={selectedState} onChange={handleStateChange} required>
                   <option value='' disabled >--select state--</option>
                   {
                     allstates.map((allstate)=>{
@@ -156,7 +158,7 @@ export const Donor = () => {
 
               <div className='col-span-1'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>City</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' name="" id="" value={selectedLga} onChange={handleLgaChange} required >
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' name="" id="" value={selectedLga} onChange={handleLgaChange} required >
                   <option value="" disabled>--select city--</option>
                   {
                     lgas.map(lga => (
@@ -168,7 +170,7 @@ export const Donor = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Occupation</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' type="text" value={occupation} onChange={handleOccupation} placeholder='Occupation' required>
                   <option value="null" disabled>--select Occupation--</option>
                   <option value="employed">Employed</option>
                   <option value="self-employed">Self-Employed</option>
@@ -179,7 +181,7 @@ export const Donor = () => {
                 occupation === "student" ? 
                 <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Institution</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={institution} onChange={handleInstitution} placeholder='Select Institution'>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' type="text" value={institution} onChange={handleInstitution} placeholder='Select Institution'>
                   <option value="" disabled>--select instittion</option>
                   {
                     allSchools.map(schools => (
@@ -192,7 +194,7 @@ export const Donor = () => {
             
             <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Blood Group</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' value={bloodGroup} onChange={handleBloodGroup} placeholder='Select Blood Group' required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' value={bloodGroup} onChange={handleBloodGroup} placeholder='Select Blood Group' required>
                   <option value="" disabled>--select blood group--</option>
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
@@ -208,7 +210,7 @@ export const Donor = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Genotype</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' name="genotype" value={genotype} onChange={handleGenotype} required>
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' name="genotype" value={genotype} onChange={handleGenotype} required>
                   <option value="" disabled>--select genotype--</option>
                   <option value="AA">AA</option>
                   <option value="AS">AS</option>
@@ -226,7 +228,7 @@ export const Donor = () => {
 
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>When was the last time you donated blood?</p>
-                <select name="lastdonation" value={lastDonation} onChange={handleLastDonation} className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' required>
+                <select name="lastdonation" value={lastDonation} onChange={handleLastDonation} className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' required>
                   <option value="" disabled>--select--</option>
                   <option value="First time">First time Donor</option>
                   <option value="Less than three">Less than 3 months ago</option>
@@ -236,7 +238,7 @@ export const Donor = () => {
               
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Have you followed our social media handle?</p>
-                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent' type="text" value={followed} onChange={handleFollowed} placeholder='' >
+                <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' type="text" value={followed} onChange={handleFollowed} placeholder='' >
                   <option value={false}>No</option>
                   <option value={true}>Yes</option>
                 </select>
@@ -245,9 +247,9 @@ export const Donor = () => {
               {
                 followed === true ? '' :
                 <div className='text-[#191919] flex flex-col lg:flex-row gap-4 text-sm lg:text-base'>
-                <div className='flex w-full mt-6 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=avESrC" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
-                <div className='flex w-full'> <a href="https://instagram.com/onehealthngr?igshid=OGQ5ZDc2ODk2ZA" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
-                <div className='flex w-full'> <a href="https://x.com/onehealthngr?s=21&t=90iGkCUOVi3XBgT_S9Qcqw" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'>
+                <div className='flex w-full mt-6 lg:mt-0'> <a href="https://www.facebook.com/profile.php?id=100094508710417&mibextid=LQQJ4d" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={facebook} alt="" className='inline-block mr-2' /><span>Follow on facebook</span></a></div>
+                <div className='flex w-full'> <a href="https://instagram.com/onehealthls?igshid=OGQ5ZDc2ODk2ZA==" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'><img src={instagram} alt="" className='inline-block mr-2' />Follow on Instagram</a></div>
+                <div className='flex w-full'> <a href="https://x.com/onehealthlfs?s=11&t=90iGkCUOVi3XBgT_S9Qcqw" target='_blank' rel='noreferrer' className='hover:text-[#fe3434]'>
                   <svg className='inline-block w-5 h-5 mr-2' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                     <path fill='#666666' d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
                   </svg>Follow on X</a>
@@ -256,7 +258,7 @@ export const Donor = () => {
               }
               
 
-              <div className='flex gap-2 mt-6 lg:mt-7 col-span-2'>
+              <div className='flex gap-2 mt-6 lg:mt-7 col-span-2 items-center'>
                 <div><input type="checkbox" name="consent" id="" onClick={changeVisibility} className={` ${checked ? 'hidden' : 'block'} h-8 w-8 shrink-0 appearance-none border border-[#ff9d9d] rounded-lg bg-red checked:border-[#FE3434]`} />
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" onClick={changeVisibility} className={`${checked ? 'block' : 'hidden'}`}>
                       <path d="M12.0001 29.3334H20.0001C26.6667 29.3334 29.3334 26.6667 29.3334 20V12C29.3334 5.33335 26.6667 2.66669 20.0001 2.66669H12.0001C5.33341 2.66669 2.66675 5.33335 2.66675 12V20C2.66675 26.6667 5.33341 29.3334 12.0001 29.3334Z" stroke="#FE3434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -264,7 +266,7 @@ export const Donor = () => {
                     </svg>
                 </div>
                 <div>
-                  <span className='text-sm'>I agree and consent to the storage and handling of my data by One Health in accordance with the <a href="/" className='text-[#0155f8] font-medium'>privacy policy</a> </span>
+                  <span className='text-sm'>I agree and consent to the storage and handling of my data by One Health Lifesavers in accordance with the <a href="/" className='text-[#0155f8] font-medium'>privacy policy</a> </span>
                 </div>
               </div>
 

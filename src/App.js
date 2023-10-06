@@ -14,7 +14,7 @@ function App() {
     <div className="App">
         <Nav />
         <Routes>
-          <Route path='' element={<Donor/>} />
+          <Route path='' element={<Volunteer/>} />
           <Route path='about' element={<Aboutus />} />
           <Route path='volunteer' element={<Volunteer />} />
           <Route path='donor' element={<Donor />} />
