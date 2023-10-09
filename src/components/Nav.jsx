@@ -22,7 +22,7 @@ export const Nav = () => {
 
           <div className='hidden lg:flex justify-between w-6/12 text-sm font-normal '>
             <div className='p-2'><span to='about' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">About Us</span></div>
-            <div className='p-2'><NavLink to='donor' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Become a Donor</NavLink></div>
+            <div className='p-2'><NavLink to={' ' || 'donor'} className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Become a Donor</NavLink></div>
             <div className='p-2'><NavLink to='volunteer' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Become a Volunteer</NavLink></div>
             <div className='p-2'><span to='events' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Events</span></div>
             <div className='p-2'><span to='faqs' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">FAQs</span></div>

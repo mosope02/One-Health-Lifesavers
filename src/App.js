@@ -8,13 +8,15 @@ import { Events } from './components/Events';
 import { FAQ } from './components/FAQ';
 import { Joinvolunteers } from './components/Joinvolunteers';
 import { Joindonors } from './components/Joindonors';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
         <Nav />
+        <ScrollToTop />
         <Routes>
-          <Route path='' element={<Volunteer/>} />
+          <Route path='/' element={<Donor/>} />
           <Route path='about' element={<Aboutus />} />
           <Route path='volunteer' element={<Volunteer />} />
           <Route path='donor' element={<Donor />} />
