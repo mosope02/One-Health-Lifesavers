@@ -173,7 +173,7 @@ export const Donor = () => {
               <div className='col-span-2'>
                 <p className='text-[#191919] mt-6 lg:mt-0'>Occupation</p>
                 <select className='outline outline-[#e6e6e6] outline-1 rounded-lg p-4 mt-2 w-full bg-transparent border-r-8 lg:border-r-[16px] border-solid border-transparent' type="text" value={occupation} onChange={handleOccupation} required>
-                  <option value="null" disabled>--select Occupation--</option>
+                  <option value="" disabled>--select Occupation--</option>
                   <option value="employed">Employed</option>
                   <option value="self-employed">Self-Employed</option>
                   <option value="student">Student</option>
