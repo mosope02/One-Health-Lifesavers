@@ -17,6 +17,7 @@ export const Footer = () => {
           <div className='mt-8 lg:w-[15%]'>
             <h3 className=' font-semibold text-base text-[#0F0000]'>Company</h3>
             <ul className=' mt-5  text-sm lg:text-base font-normal text-[#666] flex flex-col gap-4'>
+            <li><Link to='/' className='hover:text-[#FE3434]'>Home</Link></li>
               <li><p to='about' className='hover:text-[#FE3434]'>About Us</p></li>
               <li><Link to='/donor' className='hover:text-[#FE3434]'>Become a Blood Donor</Link></li>
               <li><Link to='/volunteer' className='hover:text-[#FE3434]'>Become a Volunteer</Link></li>
@@ -48,7 +49,7 @@ export const Footer = () => {
         </div>
 
         <div className='h-[1px] bg-[#f2f2f2] w-full mt-10' ></div>
-        <p className='mt-10 font-normal text-[#666] text-center text-sm font-montserrat mb-10'>Copyright © 2023 One Health Lifesavers</p>
+        <p className='mt-10 font-normal text-[#666] text-center text-sm font-montserrat mb-10'>Copyright © 2024 One Health Lifesavers</p>
       </>
   )
 }

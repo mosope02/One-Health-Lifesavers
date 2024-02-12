@@ -9,6 +9,8 @@ import { FAQ } from './components/FAQ';
 import { Joinvolunteers } from './components/Joinvolunteers';
 import { Joindonors } from './components/Joindonors';
 import ScrollToTop from './components/ScrollToTop';
+import { LandingPage } from './components/LandingPage';
+import { Privacy } from './components/Privacy';
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         <Nav />
         <ScrollToTop />
         <Routes>
-          <Route path='/' element={<Donor/>} />
+          <Route path='/' element={<LandingPage/>} />
           <Route path='about' element={<Aboutus />} />
           <Route path='volunteer' element={<Volunteer />} />
           <Route path='donor' element={<Donor />} />
@@ -24,6 +26,7 @@ function App() {
           <Route path='faqs' element={<FAQ />} />
           <Route path='join-volunteers' element={<Joinvolunteers />} />
           <Route path='join-donors' element={<Joindonors />} />
+          <Route path='privacy' element={<Privacy />} />
         </Routes>
     </div>
   );

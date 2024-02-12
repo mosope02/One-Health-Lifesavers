@@ -233,7 +233,7 @@ export const Volunteer = () => {
                     </svg>
                 </div>
                 <div>
-                  <span className='text-sm'>I agree and consent to the storage and handling of my data by One Health Lifesavers in accordance with the <a href="/" className='text-[#0155f8] font-medium'>privacy policy</a> </span>
+                  <span className='text-sm'>I agree and consent to the storage and handling of my data by One Health Lifesavers in accordance with the <a href="/privacy" target='_blank' className='text-[#0155f8] font-medium'>privacy policy</a> </span>
                 </div>
               </div>
 

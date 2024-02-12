@@ -19,10 +19,10 @@ export const Nav = () => {
           <div>
             <div><img src={navlogo} alt="" className='w-16 h-16'  /></div>
           </div>
-
-          <div className='hidden lg:flex justify-between w-6/12 text-sm font-normal '>
+          <div className='hidden lg:flex justify-between w-7/12 text-sm font-normal '>
+          <div className='p-2'><NavLink to='/' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Home</NavLink></div>
             <div className='p-2'><span to='about' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">About Us</span></div>
-            <div className='p-2'><NavLink to={' ' || 'donor'} className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Become a Donor</NavLink></div>
+            <div className='p-2'><NavLink to={'donor'} className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Become a Donor</NavLink></div>
             <div className='p-2'><NavLink to='volunteer' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Become a Volunteer</NavLink></div>
             <div className='p-2'><span to='events' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">Events</span></div>
             <div className='p-2'><span to='faqs' className={({ isActive }) => (isActive ? activeLink : "text-[#333333] hover:text-[#FE3434]")} href="#dud">FAQs</span></div>
@@ -43,7 +43,8 @@ export const Nav = () => {
 
         <div className={`text-center lg:hidden ${isOpen ? 'block': 'hidden'} fixed w-full h-[100vh] bg-white z-50 `}>
             <ul className='flex flex-col gap-12'>
-              <li className='mt-11'><span onClick={closeAfterClick} to='about' className={({ isActive }) => (isActive ? activeLink : "text-[#333333]")} href="#dud">About Us</span></li>
+            <li className='mt-11'><NavLink onClick={closeAfterClick} to='/' className={({ isActive }) => (isActive ? activeLink : "text-[#333333]")} href="#dud">Home</NavLink></li>
+              <li><span onClick={closeAfterClick} to='about' className={({ isActive }) => (isActive ? activeLink : "text-[#333333]")} href="#dud">About Us</span></li>
               <li><NavLink onClick={closeAfterClick} to='donor' className={({ isActive }) => (isActive ? activeLink : "text-[#333333]")} href="#dud">Become a Blood Donor</NavLink></li>
               <li><NavLink onClick={closeAfterClick} to='volunteer' className={({ isActive }) => (isActive ? activeLink : "text-[#333333]")} href="#dud">Become a Volunteer</NavLink></li>
               <li><span onClick={closeAfterClick} to='events' className={({ isActive }) => (isActive ? activeLink : "text-[#333333]")} href="#dud">Events</span></li>
