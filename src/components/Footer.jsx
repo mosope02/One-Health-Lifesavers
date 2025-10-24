@@ -49,7 +49,7 @@ export const Footer = () => {
         </div>
 
         <div className='h-[1px] bg-[#f2f2f2] w-full mt-10' ></div>
-        <p className='mt-10 font-normal text-[#666] text-center text-sm font-montserrat mb-10'>Copyright © 2024 One Health Lifesavers</p>
+        <p className='mt-10 font-normal text-[#666] text-center text-sm font-montserrat mb-10'>Copyright © 2025 One Health Lifesavers</p>
       </>
   )
 }

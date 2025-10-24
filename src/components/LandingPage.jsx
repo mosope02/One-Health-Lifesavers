@@ -3,21 +3,24 @@ import rec1 from '../assets/rectangle-3.png'
 import rec2 from'../assets/rectangle-2.png'
 import rec3 from '../assets/rectangle-1.png';
 import rec4 from '../assets/rectangle-4.png'
+import blood from '../assets/blood.svg'
+import user from '../assets/user.svg'
 import handblood from '../assets/svgrepo-com-1.svg'
 import handmoney from '../assets/money-svgrepo-com-1.svg'
 import volunteer from '../assets/donate.svg'
 import { Carousel } from './Carousel';
 import { Footer } from './Footer';
+import Marquee from "react-fast-marquee";
 
 export const LandingPage = () => {
   return (
     <div className="font-montserrat">
         <div className='w-[87%] mx-auto mt-10'>
-            <h2 className='text-[32px] lg:text-[56px] text-[#0f0000] font-bold text-center px-3 '>Uniting Hearts, <span className='text-[#fe3434]'>Sharing Life</span>: Join Our Lifesaving Community.</h2>
+            <h2 className='text-[32px] lg:text-[56px] text-[#0f0000] font-bold text-center px-3 '>Uniting Hearts, <span className='text-[#fe3434]'>Sharing Life.</span></h2>
             <p className='lg:w-4/5 mx-auto mt-2 text-center text-sm lg:text-xl font-normal text-[#191919]'>Become a vital part of our lifesaving community, uniting hearts and sharing life through voluntary blood donations and medical outreach.</p>
             <div className='lg:flex justify-center'>
-                <button className='mt-10 py-4 px-4 bg-[#FE3434] w-full lg:w-[150px] text-white rounded hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none'>Donate Now</button>
-                <button className='mt-4 lg:mt-10 py-4 px-4 bg-white w-full lg:w-[240px] text-[#fe3434] rounded hover:bg-[#fff5f5] active:bg-[#cdb0101] active:shadow-none '><a href="/donor">Become a Blood Donor</a></button>
+                <button className='mt-10 py-4 px-4 bg-[#FE3434] w-full lg:w-[150px] text-white rounded hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none'>Donate Funds</button>
+                <button className='mt-2 lg:mt-10 py-4 px-4 bg-white w-full lg:w-[240px] text-[#fe3434] rounded hover:bg-[#fff5f5] active:bg-[#cdb0101] active:shadow-none '><a href="/donor">Become a Blood Donor</a></button>
             </div>      
         </div>
 
@@ -27,14 +30,45 @@ export const LandingPage = () => {
             <div><img className='col-span-1 w-full h-[460px]' src={rec3} alt="" /></div>
         </div>
 
-        <div className='mt-20 lg:flex w-[90%] mx-auto justify-between items-center'>
-          <div className='lg:w-[50%]'>
-            <h2 className='text-2xl lg:text-[40px] lg:w-full font-semibold text-center lg:text-left text-[#191919] mb-2'>Our Mission</h2>
-            <p className='text-[#333333] font-montserrat text-sm lg:text-xl lg:w-[94.8%] w-[87.7%] mx-auto lg:mx-0 text-center lg:text-left'>Our mission is to create a platform that encourages and facilitates voluntary blood donations in Nigeria, and to educate the public about the importance of blood donations and blood-related diseases. We are committed to providing a sustainable solution to the blood shortage crisis in the country by building a network of blood donors and organizing medical outreaches to screen and educate individuals on the importance of blood donation.</p>
-            <div className='text-center lg:text-left'><button className='mt-6 py-4 px-4 bg-[#FE3434] w-[150px] text-white rounded hover:shadow-[4px_4px_42px_0px_rgba(254,52,52,0.28)] active:bg-[#cdb0101] active:shadow-none'>Donate Now</button></div>
+        <div className='mt-8 w-[100%] mx-auto justify-between items-center lg:hidden'>
+          <div className='lg:text-right lg:w-fit  w-[87.692%] lg:mx-0 mx-auto lg:mt-0 mt-10'><img className='' src={rec4} alt="Our mission.Blood collecting bags."/></div>
+        </div>
+
+        <div>
+        <Marquee className='marquee w-[90%] mx-auto mt-8 flex justify-between  ' gradient={false} speed={30}>
+          <div className='mx-6'><img className='w-14 h-10' src="https://res.cloudinary.com/frizzy/image/upload/v1751231806/OHLS/Partners/lsbtc.png" alt="" /></div>
+          <div className='mx-6'><img className='w-10' src="https://res.cloudinary.com/frizzy/image/upload/v1751220011/OHLS/Partners/Lasuth.png" alt="" /></div>
+          <div className='mx-6'><img className='w-8 h-6' src="https://res.cloudinary.com/frizzy/image/upload/v1751219772/OHLS/Partners/Haima.png" alt="" /></div>
+          <div className='mx-6'><img className='w-8' src="https://res.cloudinary.com/frizzy/image/upload/v1751231805/OHLS/Partners/kbklub.png" alt="" /></div>
+          <div className='mx-6'><img className='w-8' src="https://res.cloudinary.com/frizzy/image/upload/v1751231805/OHLS/Partners/lasumsa.png" alt="" /></div>
+        </Marquee>
+        </div>
+
+        <div className='mt-12 lg:mt-40 mx-auto '>
+          <h2 className='text-[#FE3434] text-center text-xs font-semibold lg:text-xl'>Our Impact</h2>
+          <h3 className='text-[#191919] text-center text-2xl lg:text-[40px] font-semibold w-9/12 mx-auto mt-2 lg:mt-4'>Measuring Our Success, One Life at a Time</h3>
+          <p className='text-[#333] text-center text-sm lg:text-xl lg:w-[70%] w-10/12 mx-auto mt-2 lg:mt-4'>See the powerful difference your support makes through our impact metrics.</p>
+
+          <div className='mt-8 w-[92%] mx-auto flex flex-col gap-6'> {/* Metrics Section */ }
+            <div className=' p-6 bg-[#FFE6E6] rounded-lg flex flex-col items-center justify-center'>
+              <div><img src={blood} alt="" /></div>
+              <h2 className='mt-2 text-[#fe3434] font-extrabold text-4xl'>20+</h2>
+              <p className='text-center text-[#333]'>Medical outreach and blood donation drive organised.</p>
+            </div>
+
+            <div className=' p-6 bg-[#FFE6E6] rounded-lg flex flex-col items-center justify-center'>
+              <div><img src={blood} alt="" /></div>
+              <h2 className='mt-2 text-[#fe3434] font-extrabold text-4xl'>2k+</h2>
+              <p className='text-center text-[#333]'>Pints of blood donated through our medical outreach.</p>
+            </div>
+
+            <div className=' p-6 bg-[#FFE6E6] rounded-lg flex flex-col items-center justify-center'>
+              <div><img src={user} alt="" /></div>
+              <h2 className='mt-2 text-[#fe3434] font-extrabold text-4xl'>100+</h2>
+              <p className='text-center text-[#333]'>Individuals benefitted from the blood donated.</p>
+            </div>
           </div>
 
-          <div className='lg:text-right lg:w-fit  w-[87.692%] lg:mx-0 mx-auto lg:mt-0 mt-10'><img className='' src={rec4} alt="Our mission.Blood collecting bags."/></div>
         </div>
 
         <div className='mt-12 lg:mt-40'>
