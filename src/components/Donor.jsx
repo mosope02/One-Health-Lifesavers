@@ -112,7 +112,7 @@ export const Donor = () => {
   }
   return (
     <>
-      <div className='bg-[#fff5f5] font-montserrat py-12 lg:py-20'>
+      <div className='bg-[#FFE6E6] font-montserrat py-12 lg:py-20'>
         <div className='w-[89%] mx-auto bg-white py-10 px-4 lg:px-10 md:py-6 lg:py-10 rounded-2xl'>
             
             <div>
