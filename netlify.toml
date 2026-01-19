@@ -4,4 +4,6 @@ to = "/index.html"
 status = 200
 
 [build]
+  command = "npm run build"
   node_version = "22"
+  publish = "dist"  
